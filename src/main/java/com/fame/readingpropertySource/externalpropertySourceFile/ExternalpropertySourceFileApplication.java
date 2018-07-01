@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.fame.readingpropertySource.externalpropertySourceFile.dataSource.FakeDataSource;
+import com.fame.readingpropertySource.externalpropertySourceFile.dataSource.JMSDataSource;
 
 @SpringBootApplication
 public class ExternalpropertySourceFileApplication {
@@ -16,5 +17,8 @@ public class ExternalpropertySourceFileApplication {
 		System.out.println("Hello There Everybody");
 		System.out.println(fakeDataSource.getUser());
 		System.out.println(fakeDataSource.getPassword());
+		JMSDataSource jmsDataSource = ctx.getBean(JMSDataSource.class);
+		System.out.println(jmsDataSource.getUserName());
+		System.out.println(jmsDataSource.getPassword());
 	}
 }
